@@ -8,7 +8,8 @@ const { response } = require('express');
 
 
 const app = express();
-// app.port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
+const server = https.createServer(app);
 
 
 
@@ -70,7 +71,7 @@ app.post("/failure", function(req, res){
 })
 
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(port, function () {
     console.log("server is running on port 3000.");
 });
 
